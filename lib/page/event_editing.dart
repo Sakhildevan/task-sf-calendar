@@ -8,7 +8,7 @@ import '../provider/event_provider.dart';
 
 class EventEditingPage extends StatefulWidget {
   final Event? event;
-  EventEditingPage({
+  const EventEditingPage({
     Key? key,
     this.event,
   }) : super(key: key);
@@ -45,31 +45,29 @@ class _EventEditingPageState extends State<EventEditingPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFFEB5757),
-        leading: CloseButton(),
-        actions: buildEditingActions(),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                buildTitle(),
-                SizedBox(height: 12),
-                buidDateTimePicker()
-              ],
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color(0xFFEB5757),
+          leading: CloseButton(),
+          actions: buildEditingActions(),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  buildTitle(),
+                  SizedBox(height: 12),
+                  buidDateTimePickers()
+                ],
+              ),
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
 
   List<Widget> buildEditingActions() => [
         ElevatedButton.icon(
@@ -80,8 +78,8 @@ class _EventEditingPageState extends State<EventEditingPage> {
           ),
           onPressed: saveForm,
           icon: Icon(Icons.done),
-          label: Text("save"),
-        )
+          label: Text("SAVE"),
+        ),
       ];
 
   Widget buildTitle() => TextFormField(
@@ -96,7 +94,7 @@ class _EventEditingPageState extends State<EventEditingPage> {
         controller: titleController,
       );
 
-  Widget buidDateTimePicker() => Column(
+  Widget buidDateTimePickers() => Column(
         children: [
           buildFrom(),
           buildTo(),

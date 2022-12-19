@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:todo/model/event_data_source.dart';
 import 'package:todo/provider/event_provider.dart';
+
 import 'package:syncfusion_flutter_core/theme.dart';
 
 import '../page/event_viewing_page.dart';
@@ -16,9 +17,9 @@ class _TaskWidgetState extends State<TaskWidget> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<EventProvider>(context);
-    final selectedEvents = provider.eventOfSelectedDate;
+    final selectedEvents = provider.eventsOfSelectedDate;
     if (selectedEvents.isEmpty) {
-      return const Center(
+      return Center(
         child: Text(
           'NO Events found!',
           style: TextStyle(color: Colors.black, fontSize: 24),
@@ -36,7 +37,7 @@ class _TaskWidgetState extends State<TaskWidget> {
           headerHeight: 0,
           todayHighlightColor: Colors.black,
           selectionDecoration: BoxDecoration(
-            color: Colors.transparent,
+            color: Colors.red,
           ),
           onTap: (details) {
             if (details.appointments == null) return;

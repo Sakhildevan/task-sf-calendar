@@ -4,7 +4,7 @@ import 'package:todo/model/event.dart';
 
 class EventDataSource extends CalendarDataSource {
   EventDataSource(List<Event> appoinments) {
-    this.appointments = appointments;
+    appointments = appointments;
   }
   Event getEvent(int index) => appointments![index] as Event;
 
