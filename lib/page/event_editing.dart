@@ -8,7 +8,7 @@ import '../provider/event_provider.dart';
 
 class EventEditingPage extends StatefulWidget {
   final Event? event;
-  const EventEditingPage({
+  EventEditingPage({
     Key? key,
     this.event,
   }) : super(key: key);

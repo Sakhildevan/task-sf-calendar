@@ -16,3 +16,16 @@ class Event {
     this.isAllDay = false,
   });
 }
+
+
+//import 'package:firebase_database/firebase_database.dart';
+
+// final eventReference = FirebaseDatabase.instance.reference().child('events');
+// eventReference.push().set({
+//   'title': event.title,
+//   'description': event.description,
+//   'from': event.from.toIso8601String(),
+//   'to': event.to.toIso8601String(),
+//   'backgroundColor': event.backgroundColor.value,
+//   'isAllDay': event.isAllDay,
+// });
